@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Table Creation</title>
+
+	<!--Linking the BootStrap CDN-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"crossorigin="anonymous">
+
+	<style type="text/css">
+		div {
+			text-align: center;
+		}
+
+		#heading {
+			font-weight: 700;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row border border-dark" id="heading">
+			<div class="col-6 border border-dark">S.NO</div>
+			<div class="col-6 border border-dark">Name</div>
+		</div>
+    <div class="row border border-dark">
+			<div class="col border border-dark">1</div>
+			<div id="row1" class="col border border-dark" onclick="bindNameToInput('row1')">Ram</div>
+		</div>
+    <div class="row border border-dark">
+			<div class="col border border-dark">2</div>
+			<div id="row2" class="col border border-dark" onclick="bindNameToInput('row2')">Mangesh</div>
+		</div>
+    <div class="row border border-dark">
+			<div class="col border border-dark">3</div>
+			<div id="row3" class="col border border-dark" onclick="bindNameToInput('row3')">Vijay</div>
+		</div>
+    <div class="row border border-dark">
+			<div class="col border border-dark">4</div>
+			<div id="row4" class="col border border-dark" onclick="bindNameToInput('row4')">Alex</div>
+		</div>
+    <div class="row border border-dark">
+			<div class="col border border-dark">5</div>
+			<div id="row5" class="col border border-dark" onclick="bindNameToInput('row5')">Rahim</div>
+		</div>
+    <div class="row border border-dark">
+			<div class="col border border-dark">6</div>
+			<div id="row6" class="col border border-dark" onclick="bindNameToInput('row6')">Ram</div>
+		</div>
+	</div>
+  <br>
+  <br>
+  Name:<input type="text" id="val">
+      <br>
+      <br>
+      <input type="submit" id="submit" onClick="updateName()">
+</body>
+<script>
+var nameElementId=null;
+function bindNameToInput(id){
+nameElementId = id;
+	var name = document.getElementById(id);
+  var inputElement = document.getElementById('val');
+  inputElement.value = name.innerText
+}
+function updateName(){
+	var name = document.getElementById(nameElementId);
+  var inputElement = document.getElementById('val');
+  name.innerText = inputElement.value
+}
+</script>
+</html>
